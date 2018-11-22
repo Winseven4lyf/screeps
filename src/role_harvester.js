@@ -17,7 +17,7 @@ module.exports = {
                 creep.moveTo(source);
             }
         } else {
-            let target = _.first(Game.spawns);
+            let target = Game.spawns[_.keys(Game.spawns)[0]];
             if (creep.transfer(target, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
                 creep.moveTo(target);
             }
