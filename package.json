@@ -1,10 +1,22 @@
 {
     "name": "winseven4lyf-screeps",
+    "description": "Quinn Johnson's screeps code.",
     "version": "1.0.0",
     "private": true,
     "scripts": {
         "upload": "node upload.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/winseven4lyf/screeps.git"
+    },
+    "keywords": ["screeps"],
+    "author": "Quinn Johnson <winseven4lyf@gmail.com> (https://winseven4lyf.github.io)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/winseven4lyf/screeps/issues"
+    },
+    "homepage": "https://github.com/winseven4lyf/screeps",
     "devDependencies": {
         "@types/lodash": "^3.10.2",
         "terser": "^3.10.12"
