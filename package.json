@@ -1,0 +1,12 @@
+{
+    "name": "winseven4lyf-screeps",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "upload": "upload.js"
+    },
+    "devDependencies": {
+        "@types/lodash": "^3.10.2",
+        "terser": "^3.10.12"
+    }
+}
