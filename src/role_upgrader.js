@@ -15,9 +15,9 @@ module.exports = {
 
         // Main logic
         if (mem.role.data.upgrading === true) {
-            let controller = Game.getObjectById(mem.role.data.controller);
-            if (creep.upgradeController(controller) === ERR_NOT_IN_RANGE) {
-                creep.moveTo(controller);
+            let target = Game.getObjectById(mem.role.data.controller);
+            if (creep.upgradeController(target) === ERR_NOT_IN_RANGE) {
+                creep.moveTo(target);
             }
         } else {
             let target = Game.spawns[_.keys(Game.spawns)[0]];

@@ -12,9 +12,9 @@ module.exports = {
 
         // Main logic
         if (mem.role.data.harvesting === true) {
-            let source = creep.pos.findClosestByRange(FIND_SOURCES);
-            if (creep.harvest(source) === ERR_NOT_IN_RANGE) {
-                creep.travelTo(source);
+            let target = creep.pos.findClosestByRange(FIND_SOURCES);
+            if (creep.harvest(target) === ERR_NOT_IN_RANGE) {
+                creep.travelTo(target);
             }
         } else {
             let target = Game.spawns[_.keys(Game.spawns)[0]];
