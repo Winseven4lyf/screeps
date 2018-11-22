@@ -4,11 +4,8 @@ module.exports = {
 
         // Validate and update memory
         if (!_.isBoolean(mem.role.data.harvesting)) { mem.role.data.harvesting = true; }
-        if (_.sum(creep.carry) === creep.carryCapacity) {
-            mem.role.data.harvesting = false;
-        } else {
-            mem.role.data.harvesting = true;
-        }
+        if (_.sum(creep.carry) === creep.carryCapacity) { mem.role.data.harvesting = false; }
+        else { mem.role.data.harvesting = true; }
 
         // Main logic
         if (mem.role.data.harvesting === true) {
