@@ -10,6 +10,7 @@ const argv = require("yargs")
     .argv;
 
 const src = "./src";
+const extraFiles = ["Traveler/Traveler.js"];
 
 let data = {
     branch: argv.branch,
@@ -23,9 +24,19 @@ fs.readdirSync(src).forEach(file => {
     let contents = fs.readFileSync(path.join(src, file), { encoding: "utf8" });
     let result = terser.minify(contents);
     if (result.error) { throw result.error; }
-    console.log(` + ${file}`);
+    console.log(` + ${path.join(src, file)}`);
     data.modules[path.basename(file, ".js")] = result.code;
 });
+
+if (extraFiles.length > 0) {
+    console.log("Adding extra files...");
+    extraFiles.forEach(file => {
+        file = path.normalize(file);
+        let contents = fs.readFileSync(file, { encoding: "utf8" });
+        console.log(` + ${file}`);
+        data.modules[path.basename(file, ".js")] = contents;
+    });
+}
 
 console.log("Uploading...");
 let req = https.request({
