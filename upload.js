@@ -14,7 +14,7 @@ let data = {
 console.log("Minifying...")
 fs.readdirSync(src).forEach(file => {
     let contents = fs.readFileSync(path.join(src, file), { encoding: "utf8" });
-    console.log(`  ${file}`);
+    console.log(` + ${file}`);
     let result = terser.minify(contents);
     if (result.error) { throw result.error; }
     data.modules[path.basename(file, ".js")] = result.code;
@@ -30,6 +30,11 @@ let req = https.request({
     headers: {
         "Content-Type": "application/json; charset=utf-8"
     }
+}, res => {
+    res.on("data", d => {
+        let ok = JSON.parse(d.toString()).ok;
+        console.log(`Finished, ok = ${ok}.`);
+    });
 });
 req.write(JSON.stringify(data));
 req.end();

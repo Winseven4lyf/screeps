@@ -4,13 +4,16 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "upload": "node upload.js"
+        "upload": "node upload.js",
+        "watch": "chokidar \"./src/*.js\" -c \"node upload.js\""
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/winseven4lyf/screeps.git"
     },
-    "keywords": ["screeps"],
+    "keywords": [
+        "screeps"
+    ],
     "author": "Quinn Johnson <winseven4lyf@gmail.com> (https://winseven4lyf.github.io)",
     "license": "ISC",
     "bugs": {
@@ -19,6 +22,7 @@
     "homepage": "https://github.com/winseven4lyf/screeps",
     "devDependencies": {
         "@types/lodash": "^3.10.2",
+        "chokidar-cli": "^1.2.1",
         "terser": "^3.10.12"
     }
 }
