@@ -1,7 +1,3 @@
-/**
- * @license ISC
- */
-
 const ROLES = {
     harvester: require("role_harvester")
 };

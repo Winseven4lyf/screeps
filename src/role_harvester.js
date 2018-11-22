@@ -1,7 +1,3 @@
-/**
- * @license ISC
- */
-
 module.exports = {
     loop: function (creep) {
         let mem = creep.memory;
