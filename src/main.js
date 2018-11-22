@@ -1,3 +1,7 @@
+/**
+ * @license ISC
+ */
+
 const ROLE = require("role_main");
 
 module.exports = {
