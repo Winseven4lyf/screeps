@@ -4,20 +4,23 @@ const https = require("https");
 const terser = require("terser");
 const auth = require("./.screeps.js");
 
+const src = "./src";
+
 let data = {
     branch: "default",
     modules: {}
 };
 
-fs.readdirSync("./src").forEach(file => {
-    let contents = fs.readFileSync(path.join("./src", file), { encoding: "utf8" });
-    console.info(`Minifying ${file}...`);
+console.log("Minifying...")
+fs.readdirSync(src).forEach(file => {
+    let contents = fs.readFileSync(path.join(src, file), { encoding: "utf8" });
+    console.log(`  ${file}`);
     let result = terser.minify(contents);
     if (result.error) { throw result.error; }
     data.modules[path.basename(file, ".js")] = result.code;
 });
 
-console.info("Uploading...");
+console.log("Uploading...");
 let req = https.request({
     hostname: "screeps.com",
     port: 443,
