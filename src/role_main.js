@@ -1,5 +1,6 @@
 const ROLES = {
-    harvester: require("role_harvester")
+    harvester: require("role_harvester"),
+    upgrader: require("role_upgrader")
 };
 
 module.exports = {
