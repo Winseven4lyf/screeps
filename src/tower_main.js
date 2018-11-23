@@ -37,7 +37,7 @@ module.exports = {
                                 wall => wall.hits < wall.hitsMax
                             );
                             if (damagedWalls.length > 0) {
-                                _.sortBy(damagedWalls, "hitsMax");
+                                _.sortBy(damagedWalls, "hits");
                                 _.forEach(towers, tower => {
                                     tower.repair(_.first(damagedWalls));
                                 });
