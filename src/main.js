@@ -3,8 +3,8 @@ const ROLE = require("role_main");
 const TOWER = require("tower_main");
 
 module.exports = {
-    loop: function () {
-        ROLE.loop(Game.creeps);
+    loop: () => {
+        ROLE.loop();
         TOWER.loop();
     }
 };

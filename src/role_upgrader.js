@@ -1,5 +1,5 @@
 module.exports = {
-    loop: function (creep) {
+    loop: creep => {
         let mem = creep.memory;
 
         // Validate and update memory

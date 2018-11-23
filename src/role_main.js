@@ -4,8 +4,8 @@ const ROLES = {
 };
 
 module.exports = {
-    loop: function (creeps) {
-        _.forEach(creeps, (creep) => {
+    loop: () => {
+        _.forEach(Game.creeps, creep => {
             let mem = creep.memory;
             module.exports.ensureMemory(creep);
             const ROLE = ROLES[mem.role.name];
@@ -14,7 +14,7 @@ module.exports = {
             }
         });
     },
-    ensureMemory: function (creep) {
+    ensureMemory: creep => {
         let mem = creep.memory;
         if (!_.isObject(mem.role)) { mem.role = {}; }
         if (!_.isString(mem.role.name)) { mem.role.name = ""; }
